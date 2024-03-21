@@ -1,0 +1,14 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.wso2.ballerina'
+version = 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ':SpiMain')
+}

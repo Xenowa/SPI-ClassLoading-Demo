@@ -1,0 +1,2 @@
+# We have to define the class which implements the interface in this file for SPI to figure it out
+org.wso2.ballerina.ToolPluginIml

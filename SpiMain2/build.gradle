@@ -1,0 +1,28 @@
+plugins {
+    id 'java'
+    // To create Uber JAR we use the shadow plugin
+    id "com.github.johnrengelman.shadow" version "8.1.1"
+}
+
+group = 'org.wso2.ballerina'
+version = 'unspecified'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(path: ':ClassLoadingModule')
+}
+
+// Configurations for shadow JAR
+def shadowJar = tasks.shadowJar
+
+task sourcesJar(type: Jar, dependsOn: classes) {
+    archiveClassifier.set('sources')
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives shadowJar
+}

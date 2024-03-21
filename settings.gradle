@@ -1,0 +1,6 @@
+rootProject.name = 'SPI-ClassLoading-Demo'
+include 'SpiMain'
+include 'ClassLoadingModule'
+include 'SpiMain2'
+include 'SpiPlugin'
+
