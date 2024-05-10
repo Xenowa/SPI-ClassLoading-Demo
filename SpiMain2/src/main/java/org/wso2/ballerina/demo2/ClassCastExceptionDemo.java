@@ -43,6 +43,8 @@ public class ClassCastExceptionDemo {
         try {
             Class<?> MessagePrinter = customUcl.loadClass("org.nexus.v0.MessagePrinter");
 
+            // Class cast exception will occur at this point since it's trying to cast a class loaded from one
+            // class loader using a class loaded from the current class loader
             messagePrinter = (MessagePrinter) MessagePrinter.getConstructor().newInstance();
         } catch (ClassNotFoundException | InvocationTargetException | InstantiationException | IllegalAccessException |
                  NoSuchMethodException e) {

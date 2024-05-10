@@ -26,7 +26,7 @@ public class ClassLoadingErrors {
          * 2. package the JAR as an Uber JAR {@link  org.wso2.ballerina.demo1.UberJarClassLoading}
          * */
 
-        /** ClassCastException: Created when there are 2 classes with same definitions but different class loaders
+        /** 3. ClassCastException: Created when there are 2 classes with same definitions but different class loaders
          * {@link  org.wso2.ballerina.demo2.ClassCastExceptionDemo}
          * */
 
