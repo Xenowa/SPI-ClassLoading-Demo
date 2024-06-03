@@ -24,14 +24,20 @@ public class ClassLoaderTypes {
 
     public static void main(String[] args) {
         // Application class loader
-        System.out.println("ClassLoader Name: " + ClassLoaderTypes.class.getClassLoader().getName());
+        ClassLoader appClassLoader = ClassLoaderTypes.class.getClassLoader();
+        System.out.println("ClassLoader Name: " + appClassLoader.getName());
 
         // Platform class loader
-        System.out.println("ClassLoader Name: " + ClassLoaderTypes.class.getClassLoader().getParent().getName());
+        ClassLoader platformClassLoader = appClassLoader.getParent();
+        System.out.println("ClassLoader Name: " + platformClassLoader.getName());
 
         // Bootstrap class loader (since null following will give exception)
         // System.out.println("ClassLoader Name: " + ClassLoaderTypes.class.getClassLoader().getParent().getParent().getName());
-        // So we directly get class loader of the String class
-        System.out.println(String.class.getClassLoader());
+        ClassLoader bootstrapClassLoader = platformClassLoader.getParent();
+        System.out.println(bootstrapClassLoader);
+
+        // The String class is loaded by bootstrap class loader
+        ClassLoader stringClassLoader = String.class.getClassLoader();
+        System.out.println(stringClassLoader);
     }
 }

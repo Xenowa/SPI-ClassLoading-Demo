@@ -35,7 +35,7 @@ public class URLClassLoading {
     // UCL uses App Class Loader as parent
     // Since App Class Loader does not have the class it will delegate loading the class from UCL it self
     // Method will execute during run time when class path is given as follows
-    // java -cp SpiMain-1.0-SNAPSHOT.jar;"C:\Users\Tharana Wanigaratne\Desktop\SPI-ClassLoading-Demo\ClassLoadingModule\build\libs\ClassLoadingModule.jar" org.wso2.ballerina.demo3.ClassLoading
+    // java -cp SpiMain-1.0-SNAPSHOT.jar org.wso2.ballerina.classloading.demo4.URLClassLoading
     public static void main(String[] args) {
         Path jarPath =
                 Path.of("C:\\Users\\Tharana Wanigaratne\\Desktop\\SPI-ClassLoading-Demo\\ClassLoadingModule\\build\\libs\\ClassLoadingModule.jar");

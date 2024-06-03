@@ -38,13 +38,13 @@ public class ClassCastExceptionDemo {
                 "C:\\Users\\Tharana Wanigaratne\\Desktop\\SPI-ClassLoading-Demo\\ClassLoadingModule\\build\\libs\\ClassLoadingModule.jar";
         URLClassLoader customUcl = loadRemoteJAR(jarPath);
 
-        // Set instance from loaded class
+        // MessagePrinter class loaded from the Application class loader as the JVM finds the class in the Uber JAR
         MessagePrinter messagePrinter = null;
         try {
+            // MessagePrinter class loaded from the self-first custom class loader
             Class<?> MessagePrinter = customUcl.loadClass("org.nexus.v0.MessagePrinter");
 
-            // Class cast exception will occur at this point since it's trying to cast a class loaded from one
-            // class loader using a class loaded from the current class loader
+            // ClassCastException: Created when there are 2 classes with same definitions but different class loaders
             messagePrinter = (MessagePrinter) MessagePrinter.getConstructor().newInstance();
         } catch (ClassNotFoundException | InvocationTargetException | InstantiationException | IllegalAccessException |
                  NoSuchMethodException e) {

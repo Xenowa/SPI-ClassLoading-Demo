@@ -12,8 +12,8 @@ public class ClassLoadingErrors {
             e.printStackTrace();
         }
 
-        // 2. NoClassDefFoundError: Load a class from a JAR without adding the JAR to the classpath
-        // Triggered when JAR not added to class path: java -cp  SpiMain-1.0-SNAPSHOT.jar  org.wso2.ballerina.demo6.ClassLoadingErrors
+        // 2. NoClassDefFoundError: Occurs when a class was available during compile time but not available during runtime
+        // Triggered when JAR not added to class path: java -cp  SpiMain-1.0-SNAPSHOT.jar  org.wso2.ballerina.classloading.demo6.ClassLoadingErrors
         try {
             MessagePrinter messagePrinter = new MessagePrinter();
             messagePrinter.printMessage("From main program");
@@ -22,7 +22,7 @@ public class ClassLoadingErrors {
         }
 
         /** To mitigate NoClassDefFoundError, we could:
-         * 1. Add the JAR that contains the class to same class path: java -cp  SpiMain-1.0-SNAPSHOT.jar;"C:\Users\Tharana Wanigaratne\Desktop\SPI-ClassLoading-Demo\ClassLoadingModule\build\libs\ClassLoadingModule.jar" org.wso2.ballerina.demo6.ClassLoadingErrors
+         * 1. Add the JAR that contains the class to same class path: java -cp  SpiMain-1.0-SNAPSHOT.jar;"C:\Users\Tharana Wanigaratne\Desktop\SPI-ClassLoading-Demo\ClassLoadingModule\build\libs\ClassLoadingModule.jar" org.wso2.ballerina.classloading.demo6.ClassLoadingErrors
          * 2. package the JAR as an Uber JAR {@link  org.wso2.ballerina.demo1.UberJarClassLoading}
          * */
 

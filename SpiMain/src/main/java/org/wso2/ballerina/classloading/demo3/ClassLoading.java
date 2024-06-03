@@ -27,7 +27,7 @@ public class ClassLoading {
 
     // Uses Application Class Loader (Therefore the JAR needs to be in same class path for class loading)
     // Method will execute during run time when class path is given as follows
-    // java -cp SpiMain-1.0-SNAPSHOT.jar;"C:\Users\Tharana Wanigaratne\Desktop\SPI-ClassLoading-Demo\ClassLoadingModule\build\libs\ClassLoadingModule.jar" org.wso2.ballerina.demo3.ClassLoading
+    // java -cp SpiMain-1.0-SNAPSHOT.jar;"C:\Users\Tharana Wanigaratne\Desktop\SPI-ClassLoading-Demo\ClassLoadingModule\build\libs\ClassLoadingModule.jar" org.wso2.ballerina.classloading.demo3.ClassLoading
     public static void main(String[] args) {
         try {
             Class<?> MessagePrinter = ClassLoading.class.getClassLoader().loadClass("org.nexus.v0.MessagePrinter");

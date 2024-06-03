@@ -28,6 +28,7 @@ import java.net.URLClassLoader;
 import java.nio.file.Path;
 import java.util.Scanner;
 
+// Also can be executed by: java -cp SpiMain-1.0-SNAPSHOT.jar org.wso2.ballerina.classloading.demo5.CustomClassLoading
 public class CustomClassLoading {
 
     public static void main(String[] args) {
